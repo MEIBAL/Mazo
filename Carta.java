@@ -1,28 +1,28 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mazoarray;
 
 /**
- * Clase Carta
- * @author bri93
+ *
+ * @author Eyeless Jack
  */
 public class Carta {
     
-    //Atributos
-    private int numero;
-    private String palo;
-    
-    //Constantes
-    public static final String[] PALOS={"ESPADA", "ORO", "COPA", "BASTO"};
-    public static final int LIMITE_CARTA_PALO=12;
+    String[] numero = {" 1"," 2"," 3"," 4"," 5"," 6"," 7"," 10"," 11"," 12"};
+    String[] palo = {".basto.",".oro.",".copa.",".espada."};
 
-    //Constructor
-    public Carta(int numero, String palo) {
-        this.numero = numero;
-        this.palo = palo;
+    public String[] getNumero() {
+        return numero;
     }
+ 
+
+    public String[] getPalo() {
+        return palo;
+    }
+ 
     
-    @Override
-    public String toString() {
-        return + numero + " de " + palo;
-    }
     
 }
