@@ -1,45 +1,27 @@
 package mazoarray;
 
 /**
- * @author bri15
+ * @author ivo
  */
 public class metodos {
-
-    String[] mazo = new String[80];
+String[] mazo = new String[80];
     Carta carta = new Carta();
     int pal = 0;
     int contP = 0;
     int num = 0;
     int contN = 0;
-
-    //Variables de prueba
+     //Variables de prueba
     //-------------------Calcular Envido
     static int sumaPlayer = 0;
     static int sumaCPU = 0;
-    //-------------------Variables Numero de carta del Jugador (Captura porcion de memoria en un String)
-    static String NumeroCartaString1Jugador;
-    static String NumeroCartaString2Jugador;
-    static String NumeroCartaString3Jugador;
-    //-------------------Variables Numero de carta del Jugador (Convierte el String capturado a Int)
-    static int NumeroCartaInt1Jugador = 0;
-    static int NumeroCartaInt2Jugador = 0;
-    static int NumeroCartaInt3Jugador = 0;
-    //------------------Variables Numero de carta del CPU (Captura porcion de memoria en un String)
-    static String NumeroCartaString1CPU;
-    static String NumeroCartaString2CPU;
-    static String NumeroCartaString3CPU;
-    //------------------Variables Numero de carta del CPU (Convierte el String capturado a Int)
-    static int NumeroCartaInt1CPU = 0;
-    static int NumeroCartaInt2CPU = 0;
-    static int NumeroCartaInt3CPU = 0;
+    //-------------------Variables Numero de carta del Jugador
+    static int NcartaJuagador []=new int [3];
+    //------------------Variables Numero de carta del CPU
+    static int NcartaCPU []=new int [3];
     //------------------Variables Tipo de Palo carta del Jugador (Captura porcion de memoria en un String)
-    static String PaloCarta1Jugador;
-    static String PaloCarta2Jugador;
-    static String PaloCarta3Jugador;
+    static String Palocartaj[]=new String [3];
     //-----------------Variables Tipo de Palo carta del CPU (Captura porcion de memoria en un String)
-    static String PaloCarta1CPU;
-    static String PaloCarta2CPU;
-    static String PaloCarta3CPU;
+    static String Palocarta[]=new String [3];
     //Fin variables de Prueba
     String mazoFinal[] = new String[40];
     int contador = 0;
@@ -75,6 +57,7 @@ public class metodos {
             contador = contador + 2;
         }
         System.out.println("Se creo el Mazo");
+
     }
 
     public void barajar() {
@@ -121,109 +104,70 @@ public class metodos {
 
     //Metodo Split Numero carta para el Jugador que llama a sus respectivas variables
     public static void SplitPlayer(String[] arreglo) {
-
-        //Int "Inicio" marca el caracter donde cortara al String, pero no lo cuenta
-        int inicio0 = arreglo[0].indexOf(" ");
-        int inicio1 = arreglo[1].indexOf(" ");
-        int inicio2 = arreglo[2].indexOf(" ");
-
-        //Int "Fin" marca el caracter donde cortara al String, pero no lo cuenta
-        int fin0 = arreglo[0].indexOf(" ", inicio0 + 1);
-        int fin1 = arreglo[1].indexOf(" ", inicio1 + 1);
-        int fin2 = arreglo[2].indexOf(" ", inicio2 + 1);
-
-        //Captura la porcion de memoria la guarda en un String y lo convierte a Int
-        NumeroCartaString1Jugador = (arreglo[0].substring(inicio0 + 1, fin0));
-        NumeroCartaString2Jugador = (arreglo[1].substring(inicio1 + 1, fin1));
-        NumeroCartaString3Jugador = (arreglo[2].substring(inicio2 + 1, fin2));
-        NumeroCartaInt1Jugador = Integer.parseInt(NumeroCartaString1Jugador);
-        NumeroCartaInt2Jugador = Integer.parseInt(NumeroCartaString2Jugador);
-        NumeroCartaInt3Jugador = Integer.parseInt(NumeroCartaString3Jugador);
-
-//        System.out.println("\n" + NumeroCartaInt1Jugador + "\n" + NumeroCartaInt2Jugador + "\n" + NumeroCartaInt3Jugador);
+        for (int i = 0; i < arreglo.length; i++) {
+            //Int "Inicio" marca el caracter donde cortara al String, pero no lo cuenta
+            int inicio0 = arreglo[i].indexOf(" ");
+            //Int "Fin" marca el caracter donde cortara al String, pero no lo cuenta
+            int fin0 = arreglo[i].indexOf(" ", inicio0 + 1);
+            //Captura la porcion de memoria y lo convierte a Int
+            NcartaJuagador[i] = Integer.parseInt(arreglo[i].substring(inicio0 + 1, fin0));
+        }
     }
-
     //Metodo Split Numero carta para el Jugador que llama a sus respectivas variables
+
     public static void SplitpalabraPlayer(String[] palabra) {
+        for (int i = 0; i < palabra.length; i++) {
+            //Int "Inicio" marca el caracter donde cortara al String, pero no lo cuenta
+            int inicio0 = palabra[i].indexOf(".");
+            //Int "Fin" marca el caracter donde cortara al String, pero no lo cuenta
+            int fin0 = palabra[i].indexOf(".", inicio0 + 1);
+            //Captura la porcion de memoria la guarda en un String y lo convierte a Int
 
-        //Int "Inicio" marca el caracter donde cortara al String, pero no lo cuenta
-        int inicio0 = palabra[0].indexOf(".");
-        int inicio1 = palabra[1].indexOf(".");
-        int inicio2 = palabra[2].indexOf(".");
-
-        //Int "Fin" marca el caracter donde cortara al String, pero no lo cuenta
-        int fin0 = palabra[0].indexOf(".", inicio0 + 1);
-        int fin1 = palabra[1].indexOf(".", inicio1 + 1);
-        int fin2 = palabra[2].indexOf(".", inicio2 + 1);
-
-        //Captura la porcion de memoria la guarda en un String y lo convierte a Int
-        PaloCarta1Jugador = (palabra[0].substring(inicio0 + 1, fin0));
-        PaloCarta2Jugador = (palabra[1].substring(inicio1 + 1, fin1));
-        PaloCarta3Jugador = (palabra[2].substring(inicio2 + 1, fin2));
-
-//        System.out.println("\n" + PaloCarta1Jugador + "\n" + PaloCarta2Jugador + "\n" + PaloCarta3Jugador);
+            Palocartaj[i] = palabra[i].substring(inicio0 + 1, fin0);
+        }
     }
 
     //Metodo Split Numero carta para el CPU que llama a sus respectivas variables
     public static void SplitCPU(String[] arreglo) {
-
-        //Int "Inicio" marca el caracter donde cortara al String, pero no lo cuenta
-        int inicio0 = arreglo[0].indexOf(" ");
-        int inicio1 = arreglo[1].indexOf(" ");
-        int inicio2 = arreglo[2].indexOf(" ");
-
-        //Int "Fin" marca el caracter donde cortara al String, pero no lo cuenta
-        int fin0 = arreglo[0].indexOf(" ", inicio0 + 1);
-        int fin1 = arreglo[1].indexOf(" ", inicio1 + 1);
-        int fin2 = arreglo[2].indexOf(" ", inicio2 + 1);
-
-        //Captura la porcion de memoria la guarda en un String y lo convierte a Int
-        NumeroCartaString1CPU = (arreglo[0].substring(inicio0 + 1, fin0));
-        NumeroCartaString2CPU = (arreglo[1].substring(inicio1 + 1, fin1));
-        NumeroCartaString3CPU = (arreglo[2].substring(inicio2 + 1, fin2));
-        NumeroCartaInt1CPU = Integer.parseInt(NumeroCartaString1CPU);
-        NumeroCartaInt2CPU = Integer.parseInt(NumeroCartaString2CPU);
-        NumeroCartaInt3CPU = Integer.parseInt(NumeroCartaString3CPU);
-
-//        System.out.println("\n" + NumeroCartaInt1CPU + "\n" + NumeroCartaInt2CPU + "\n" + NumeroCartaInt3CPU);
+        for (int i = 0; i < arreglo.length; i++) {
+            //Int "Inicio" marca el caracter donde cortara al String, pero no lo cuenta
+            int inicio0 = arreglo[i].indexOf(" ");
+            //Int "Fin" marca el caracter donde cortara al String, pero no lo cuenta
+            int fin0 = arreglo[i].indexOf(" ", inicio0 + 1);
+            //Captura la porcion de memoria y lo convierte a Int
+            NcartaCPU[i] = Integer.parseInt(arreglo[i].substring(inicio0 + 1, fin0));
+        }
     }
 
     //Metodo Split Palo carta para el CPU que llama a sus respectivas variables   
     public static void SplitpalabraCPU(String[] palabra) {
-        //Int "Inicio" marca el caracter donde cortara al String, pero no lo cuenta
-        int inicio0 = palabra[0].indexOf(".");
-        int inicio1 = palabra[1].indexOf(".");
-        int inicio2 = palabra[2].indexOf(".");
+        for (int i = 0; i < palabra.length; i++) {
+            //Int "Inicio" marca el caracter donde cortara al String, pero no lo cuenta
+            int inicio0 = palabra[i].indexOf(".");
+            //Int "Fin" marca el caracter donde cortara al String, pero no lo cuenta
+            int fin0 = palabra[i].indexOf(".", inicio0 + 1);
+            //Captura la porcion de memoria la guarda en un String y lo convierte a Int
 
-        //Int "Fin" marca el caracter donde cortara al String, pero no lo cuenta
-        int fin0 = palabra[0].indexOf(".", inicio0 + 1);
-        int fin1 = palabra[1].indexOf(".", inicio1 + 1);
-        int fin2 = palabra[2].indexOf(".", inicio2 + 1);
-
-        //Captura la porcion de memoria la guarda en un String y lo convierte a Int
-        PaloCarta1CPU = (palabra[0].substring(inicio0 + 1, fin0));
-        PaloCarta2CPU = (palabra[1].substring(inicio1 + 1, fin1));
-        PaloCarta3CPU = (palabra[2].substring(inicio2 + 1, fin2));
-
-//        System.out.println("\n" + PaloCarta1CPU + "\n" + PaloCarta2CPU + "\n" + PaloCarta3CPU);
+            Palocarta[i] = palabra[i].substring(inicio0 + 1, fin0);
+        }
     }
 
     //Calculo de posibilidad de Envido del CPU
     public void CalcularEnvidoCPU() {
         System.out.println("\nPara el CPU:");
 
-        if (PaloCarta1CPU.equals(PaloCarta2CPU) || PaloCarta1CPU.equals(PaloCarta3CPU) || PaloCarta2CPU.equals(PaloCarta3CPU)) {
+        if (Palocarta[0].equals(Palocarta[1]) || Palocarta[0].equals(Palocarta[2]) || Palocarta[1].equals(Palocarta[2])) {
             System.out.println("Es posible cantar Envido!");
-            if (PaloCarta1CPU.equals(PaloCarta2CPU)) {
-                sumaCPU = NumeroCartaInt1CPU + NumeroCartaInt2CPU;
+            if (Palocarta[0].equals(Palocarta[1])) {
+                sumaCPU = NcartaCPU[0] + NcartaCPU[1];
                 System.out.println("Valor del Envido >> " + sumaCPU + " <<");
             }
-            if (PaloCarta1CPU.equals(PaloCarta3CPU)) {
-                sumaCPU = NumeroCartaInt1CPU + NumeroCartaInt3CPU;
+            if (Palocarta[0].equals(Palocarta[2])) {
+                sumaCPU = NcartaCPU[0] + NcartaCPU[2];
                 System.out.println("Valor del Envido >> " + sumaCPU + " <<");
             }
-            if (PaloCarta2CPU.equals(PaloCarta3CPU)) {
-                sumaCPU = NumeroCartaInt2CPU + NumeroCartaInt3CPU;
+            if (Palocarta[2].equals(Palocarta[1])) {
+                sumaCPU = NcartaCPU[1] + NcartaCPU[2];
                 System.out.println("Valor del Envido >> " + sumaCPU + " <<");
             }
         } else {
@@ -231,26 +175,29 @@ public class metodos {
         }
     }
 
-    //Calculo de posibilidad de Envido del CPU
+    //Calculo de posibilidad de Envido del Jugador
     public void CalcularEnvidoPlayer() {
         System.out.println("\nPara el Jugador:");
-        if (PaloCarta1Jugador.equals(PaloCarta2Jugador) || PaloCarta1Jugador.equals(PaloCarta3Jugador) || PaloCarta2Jugador.equals(PaloCarta3Jugador)) {
+        if (Palocartaj[0].equals(Palocartaj[1]) || Palocartaj[0].equals(Palocartaj[2]) || Palocartaj[1].equals(Palocartaj[2])) {
             System.out.println("Es posible cantar Envido!");
-            if (PaloCarta1Jugador.equals(PaloCarta2Jugador)) {
-                sumaPlayer = NumeroCartaInt1Jugador + NumeroCartaInt2Jugador;
+            if (Palocartaj[0].equals(Palocartaj[1])) {
+                sumaPlayer = NcartaJuagador[0]+NcartaJuagador[1] ;
                 System.out.println("Valor del Envido >> " + sumaPlayer + " <<");
             }
-            if (PaloCarta1Jugador.equals(PaloCarta3Jugador)) {
-                sumaPlayer = NumeroCartaInt1Jugador + NumeroCartaInt3Jugador;
+            if (Palocartaj[0].equals(Palocartaj[2])) {
+                sumaPlayer = NcartaJuagador[0]+NcartaJuagador[2] ;
                 System.out.println("Valor del Envido >> " + sumaPlayer + " <<");
             }
-            if (PaloCarta2Jugador.equals(PaloCarta3Jugador)) {
-                sumaPlayer = NumeroCartaInt2Jugador + NumeroCartaInt3Jugador;
+            if (Palocartaj[2].equals(Palocartaj[1])) {
+                sumaPlayer = NcartaJuagador[1]+NcartaJuagador[2] ;
                 System.out.println("Valor del Envido >> " + sumaPlayer + " <<");
             }
         } else {
-            System.out.println("Es posible cantar el envido, se tomara por valor la carta mas alta...");
-            //Aca debemos colocar el modo por el cual lograremos tomar solamente el valor de la carta mayor
-        }
+            System.out.println("No es posible cantar Envido...");}
     }
+
+    public void VerificarValor() {
+        ValorCartas Valor = new ValorCartas();
+        Valor.PuntajeDeRango();}
+    
 }
