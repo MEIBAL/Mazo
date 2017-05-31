@@ -38,7 +38,7 @@ public class ValorCartas {
     public void PuntajeDeRango(){
         
         ----------------------------------------------------------------------
-    Primer cadena de If Solo para comparar la primera carta de la mano
+    //Primer cadena de If Solo para comparar la primera carta de la mano
        ----------------------------------------------------------------------
 for (int i = 0; i < Palocartaj.length; i++) {
                     if (cmd.NcartaJugador [i] == 1) {
