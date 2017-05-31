@@ -40,156 +40,72 @@ public class ValorCartas {
         ----------------------------------------------------------------------
     Primer cadena de If Solo para comparar la primera carta de la mano
        ----------------------------------------------------------------------
-
-       if (cmd.NcartaJuagador [0] == 1) {
-            if (cmd.Palocartaj[0].contains("oro") || cmd.Palocartaj[0].contains("copa")) {
+for (int i = 0; i < Palocartaj.length; i++) {
+                    if (cmd.NcartaJugador [i] == 1) {
+            if (cmd.Palocartaj[i].contains("oro") || cmd.Palocartaj[i].contains("copa")) {
                 System.out.println("La primera carta es de Rango 7");
             }
-            if (cmd.Palocartaj[0].contains("basto")) {
+            if (cmd.Palocartaj[i].contains("basto")) {
                 System.out.println("La primera carta es de Rango 2");
             }
-            if (cmd.Palocartaj[0].contains("espada")) {
+            if (cmd.Palocartaj[i].contains("espada")) {
                 System.out.println("La primera carta es de Rango 1");                
             }
         }       
-        if (cmd.NcartaJuagador [0] == 2) {
+        if (cmd.NcartaJugador [i] == 2) {
             System.out.println("La primera carta es de Rango 6");     
         }    
             
-        if (cmd.NcartaJuagador [0] == 3) {
+        if (cmd.NcartaJugador [i] == 3) {
             System.out.println("La primera carta es de Rango 5");
         }        
         
-        if (cmd.NcartaJuagador [0] == 4) {
+        if (cmd.NcartaJugador [i] == 4) {
             System.out.println("La primera carta es de Rango 14");
         }
-        if (cmd.NcartaJuagador [0] == 5) {
+        if (cmd.NcartaJugador [i] == 5) {
             System.out.println("La primera carta es de Rango 13");
         }
-        if (cmd.NcartaJuagador [0] == 6) {
+        if (cmd.NcartaJugador [i] == 6) {
             System.out.println("La primera carta es de Rango 12");
         }       
-        if (cmd.NcartaJuagador [0] == 7) {
-            if (cmd.Palocartaj[0].contains("basto") || cmd.Palocartaj[0].contains("copa")) {
+        if (cmd.NcartaJugador [i] == 7) {
+            if (cmd.Palocartaj[i].contains("basto") || cmd.Palocartaj[i].contains("copa")) {
                 System.out.println("La primera carta es de Rango 11");
             }
-            if (cmd.Palocartaj[0].contains("oro")) {
+            if (cmd.Palocartaj[i].contains("oro")) {
                 System.out.println("La primera carta es de Rango 4");
             }
             if (cmd.Palocartaj[0].contains("espada")) {
                 System.out.println("La primera carta es de Rango 3");
             }
         }
-        if (cmd.NcartaJuagador [0] == 10) {
+        if (cmd.NcartaJugador [i] == 10) {
             System.out.println("La primera carta es de Rango 10");
         }
-        if (cmd.NcartaJuagador [0] == 11) {
+        if (cmd.NcartaJugador [i] == 11) {
             System.out.println("La primera carta es de Rango 9");
         }
-        if (cmd.NcartaJuagador [0] == 12) {
+        if (cmd.NcartaJugador [i] == 12) {
             System.out.println("La primera carta es de Rango 8");
         }
         //----------------------------------------------------------------------
         //Segunda cadena de If Solo para comparar la segunda carta de la mano
         //----------------------------------------------------------------------
-        if (cmd.NcartaJuagador [1] == 1) {
-            if (cmd.Palocartaj[0].contains("oro") || cmd.Palocartaj[0].contains("copa")) {
+        if (cmd.NcartaJugador [1] == 1) {
+            if (cmd.Palocartaj[i].contains("oro") || cmd.Palocartaj[i].contains("copa")) {
                 System.out.println("La primera carta es de Rango 7");
             }
-            if (cmd.Palocartaj[0].contains("basto")) {
+            if (cmd.Palocartaj[i].contains("basto")) {
                 System.out.println("La primera carta es de Rango 2");
             }
-            if (cmd.Palocartaj[0].contains("espada")) {
+            if (cmd.Palocartaj[i].contains("espada")) {
                 System.out.println("La primera carta es de Rango 1");                
             }
-        }       
-        if (cmd.NcartaJuagador [1] == 2) {
-            System.out.println("La primera carta es de Rango 6");     
-        }    
             
-        if (cmd.NcartaJuagador [1] == 3) {
-            System.out.println("La primera carta es de Rango 5");
-        }        
+        }
         
-        if (cmd.NcartaJuagador [1] == 4) {
-            System.out.println("La primera carta es de Rango 14");
-        }
-        if (cmd.NcartaJuagador [1] == 5) {
-            System.out.println("La primera carta es de Rango 13");
-        }
-        if (cmd.NcartaJuagador [1] == 6) {
-            System.out.println("La primera carta es de Rango 12");
-        }       
-        if (cmd.NcartaJuagador [1] == 7) {
-            if (cmd.Palocartaj[1].contains("basto") || cmd.Palocartaj[1].contains("copa")) {
-                System.out.println("La primera carta es de Rango 11");
-            }
-            if (cmd.Palocartaj[1].contains("oro")) {
-                System.out.println("La primera carta es de Rango 4");
-            }
-            if (cmd.Palocartaj[1].contains("espada")) {
-                System.out.println("La primera carta es de Rango 3");
-            }
-        }
-        if (cmd.NcartaJuagador [1] == 10) {
-            System.out.println("La primera carta es de Rango 10");
-        }
-        if (cmd.NcartaJuagador [1] == 11) {
-            System.out.println("La primera carta es de Rango 9");
-        }
-        if (cmd.NcartaJuagador [1] == 12) {
-            System.out.println("La primera carta es de Rango 8");
-        } 
-        //----------------------------------------------------------------------
-        //Tercera cadena de If Solo para comparar la tercera carta de la mano
-        //----------------------------------------------------------------------
-        if (cmd.NcartaJuagador [2] == 1) {
-            if (cmd.Palocartaj[2].contains("oro") || cmd.Palocartaj[2].contains("copa")) {
-                System.out.println("La primera carta es de Rango 7");
-            }
-            if (cmd.Palocartaj[2].contains("basto")) {
-                System.out.println("La primera carta es de Rango 2");
-            }
-            if (cmd.Palocartaj[2].contains("espada")) {
-                System.out.println("La primera carta es de Rango 1");                
-            }
-        }       
-        if (cmd.NcartaJuagador [2] == 2) {
-            System.out.println("La primera carta es de Rango 6");     
-        }    
-            
-        if (cmd.NcartaJuagador [2] == 3) {
-            System.out.println("La primera carta es de Rango 5");
-        }        
-        
-        if (cmd.NcartaJuagador [2] == 4) {
-            System.out.println("La primera carta es de Rango 14");
-        }
-        if (cmd.NcartaJuagador [2] == 5) {
-            System.out.println("La primera carta es de Rango 13");
-        }
-        if (cmd.NcartaJuagador [2] == 6) {
-            System.out.println("La primera carta es de Rango 12");
-        }       
-        if (cmd.NcartaJuagador [2] == 7) {
-            if (cmd.Palocartaj[2].contains("basto") || cmd.Palocartaj[2].contains("copa")) {
-                System.out.println("La primera carta es de Rango 11");
-            }
-            if (cmd.Palocartaj[2].contains("oro")) {
-                System.out.println("La primera carta es de Rango 4");
-            }
-            if (cmd.Palocartaj[2].contains("espada")) {
-                System.out.println("La primera carta es de Rango 3");
-            }
-        }
-        if (cmd.NcartaJuagador [2] == 10) {
-            System.out.println("La primera carta es de Rango 10");
-        }
-        if (cmd.NcartaJuagador [2] == 11) {
-            System.out.println("La primera carta es de Rango 9");
-        }
-        if (cmd.NcartaJuagador [2] == 12) {
-            System.out.println("La primera carta es de Rango 8");
-        }
+    }
+     
     }
 }
