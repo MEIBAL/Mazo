@@ -12,7 +12,7 @@ package mazoarray;
 public class Carta {
     
     String[] numero = {" 1"," 2"," 3"," 4"," 5"," 6"," 7"," 10"," 11"," 12"};
-    String[] palo = {".basto.",".oro.",".copa.",".espada."};
+    String[] palo = {".Basto.",".Oro.",".Copa.",".Espada."};
 
     public String[] getNumero() {
         return numero;
