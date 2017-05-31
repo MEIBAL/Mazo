@@ -119,8 +119,39 @@ public class Envido {
                 }
             }
         } else {
-            //Caso contrario no es posible cantar envido
-            System.out.println("No es posible cantar Envido...");
+            //Caso contrario se encontrara la carta mayor
+//         System.out.println("Es posible cantar Envido solo se contara el valor de la carta mayor...");
+//            
+//            int aux;
+//            int aux1=0;
+//            
+//            if (NcartaJugador[0] > NcartaJugador[1] && NcartaJugador[0] > NcartaJugador[2]) {
+//                    System.out.println("El mayor es: "+NcartaJugador[0]);
+//                if (NcartaJugador[0] > 9) {
+//                   aux = NcartaJugador[0];
+//                   aux = aux1;
+//                   
+//                    System.out.println("El valor de esa carta es " +aux1);
+//                }
+//            } 
+//            if (NcartaJugador[1] > NcartaJugador[2] && NcartaJugador[1] > NcartaJugador[0] ) {
+//                System.out.println("El Mayor es :" + NcartaJugador[1]);
+//                if (NcartaJugador[1]>9) {
+//                    aux = NcartaJugador[1];
+//                    aux = aux1;
+//                                        System.out.println("El valor de esa carta es " +aux1);
+//
+//                }
+//                
+//            } 
+//             if (NcartaJugador[2] > NcartaJugador[0] && NcartaJugador[2] > NcartaJugador[1] ) {
+//                System.out.println("El Mayor es :" + NcartaJugador[2]);
+//               if (NcartaJugador[2]>9) {
+//                    aux = NcartaJugador[2];
+//                    aux = aux1;
+//                     System.out.println("El valor de esa carta es " +aux1);
+//               }
+//        }
         }
     }
     //Calculo de posibilidad de Envido del Jugador
@@ -229,8 +260,36 @@ public class Envido {
                 }
             }
         } else {
-            //Caso contrario no es posible cantar envido
-            System.out.println("No es posible cantar Envido...");
-        }
+//            System.out.println("Es posible cantar Envido solo se contara el valor de la carta mayor...");
+//            int aux;
+//            int aux1 = 0;
+//            if (NcartaCPU[0] > NcartaCPU[1] && NcartaCPU[0] > NcartaCPU[2]) {
+//                    System.out.println("El mayor es: "+NcartaCPU[0]);
+//                    
+//               if (NcartaCPU[0]>9) {
+//                    aux = NcartaCPU[0];
+//                    aux = aux1;
+//                   System.out.println("El valor de esa carta es " +aux1);
+//        }
+//                
+//            } 
+//            if (NcartaCPU[1] > NcartaCPU[2] && NcartaCPU[1] > NcartaCPU[0] ) {
+//                System.out.println("El Mayor es :" + NcartaCPU[1]);
+//               if (NcartaCPU[1]>9) {
+//                    aux = NcartaCPU[1];
+//                    aux = aux1;
+//                   System.out.println("El valor de esa carta es " +aux1);
+//        }
+//                
+//            } 
+//             if (NcartaCPU[2] > NcartaCPU[0] && NcartaCPU[2] > NcartaCPU[1] ) {
+//                System.out.println("El Mayor es :" + NcartaCPU[2]);
+//               if (NcartaCPU[2]>9) {
+//                    aux = NcartaCPU[2];
+//                    aux = aux1;
+//                   System.out.println("El valor de esa carta es " +aux1);
+//        }
+//        }
+
     }
 }
