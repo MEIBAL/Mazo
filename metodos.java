@@ -249,7 +249,8 @@ public class metodos {
                 System.out.println("Valor del Envido >> " + sumaPlayer + " <<");
             }
         } else {
-            System.out.println("No es posible cantar Envido...");
+            System.out.println("Es posible cantar el envido, se tomara por valor la carta mas alta...");
+            //Aca debemos colocar el modo por el cual lograremos tomar solamente el valor de la carta mayor
         }
     }
 }
