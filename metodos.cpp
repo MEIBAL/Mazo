@@ -63,7 +63,7 @@ string cartasMaquina[]){
 		cout<<"Elija:\n1)Con la primer carta.\n2)Sin la primer carta.\n";
 		cin>>sinCon;
 		switch(sinCon){
-			case 1: cout << "\nUsted ha seleccionado la opción de usar la primer carta";
+			case 1: cout << "\nUsted ha seleccionado la opciÃ³n de usar la primer carta";
 //------------------------------------------------------------------------------REPARTIR
 				for(int i=0; i<3; i++){ 
 					cartasPersona[i] = mazoBarajado[i];//
@@ -71,7 +71,7 @@ string cartasMaquina[]){
 				} 
 //------------------------------------------------------------------------------FIN REPARTIR
 				break;
-			case 2: cout << "\nUsted ha seleccionado la opción de No usar la primer carta"; 
+			case 2: cout << "\nUsted ha seleccionado la opciÃ³n de No usar la primer carta"; 
 //------------------------------------------------------------------------------REPARTIR
  				string auxiliar; 
 				int cont = 1;
@@ -91,7 +91,7 @@ string cartasMaquina[]){
 				} 
 //------------------------------------------------------------------------------FIN REPARTIR 
 				break;
-//			default: cout << "Usted ha ingresado una opción incorrecta";
+//			default: cout << "Usted ha ingresado una opciÃ³n incorrecta";
 		} 
 	} 
 	if (corte > 0 && corte <40){
@@ -114,7 +114,7 @@ string cartasMaquina[]){
 			cartasMaquina[i] = mazoCortado[numMaq];
 		} 
 //------------------------------------------------------------------------------FIN REPARTIR
-		mostrar(mazoCortado);
+		//mostrar(mazoCortado);
 	} 
 	if (corte >= 40) {
 		cout<<"La baraja solo contiene 40 cartas";
