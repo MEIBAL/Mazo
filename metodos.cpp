@@ -1,10 +1,10 @@
-#include <cstdlib>
+#include <cstdlib>//sirve para convertir un entero a cadena de caracteres
 #include <iostream>
-#include <vector>
-#include <stdio.h>
-#include <cstring> 
-#include <stdlib.h>
-#include <ctime>
+#include <vector>//es para operar con arreglos unidimencionales de datos
+#include <stdio.h>//contiene las definiciones de los macros,las constantes y las declaraciones de funciones
+#include <cstring> //sirve para trabajar con secuencia de caracteres
+#include <stdlib.h>//es para gestion de memoria dinamica,control de proceso y otras
+#include <ctime>//contiene funciones para manipular y formatear la fecha y hora del sistema
 /*
 archivo donde:
 se baraja el mazo ya creado
