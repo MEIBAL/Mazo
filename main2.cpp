@@ -310,8 +310,18 @@ int main(int argc, char *argv[]) {
 					cout<<"Que hara?\n";
 					//Aqui aplicaria un switch				
 				}
-				//Metodo en contruccion = La CPU responde
-				//Metodo en contruccion para que responda la CPU
+				Victoria = Envido(EnviPlayer,EnviCPU);
+				if(Victoria){
+					cout<<"___________________________________";
+					cout<<"\nEl Jugador Gana!\n";
+					cout<<"___________________________________\n";
+				}else{
+					cout<<"___________________________________";
+					cout<<"\nLa CPU Gana!\n";
+					cout<<"___________________________________\n";
+				}
+				
+				CantaEnvido(EnviCPU);
 				break;
 			case 5: 
 				contador++;
