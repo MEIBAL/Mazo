@@ -52,7 +52,9 @@ int main(int argc, char *argv[]) {
 	int temporalEnvidoU = 0;
 	int puntajeMaquina = 0;
 	int puntajeUsuario = 0;
-	
+	string reparte;
+	int querer = 0;
+	//vbles envido
 	int ManoJugador[3];
 	int ManoMaquina[3];
 	int ValorCartaM[3];
@@ -61,9 +63,8 @@ int main(int argc, char *argv[]) {
 	int PosMemoryJ[3];
 	int EnviPlayer = 0;
 	int EnviCPU = 0;
-	
-	
-	
+	bool Victoria = false;
+		
 	cout<<"Ingrese su nombre: ";
 	cin.getline( nombre_completo, LONG_NOMBRE );//lee un carácter que se introduce desde el teclado
 	do { //do while donde se cuenta el puntaje
@@ -158,6 +159,7 @@ int main(int argc, char *argv[]) {
 								}
 								break;
 						}
+						respJugada = 0;
 					}
 					contador++;
 					contador1 ++;
@@ -172,7 +174,8 @@ int main(int argc, char *argv[]) {
 					cout<<"\n"<<cartasPersona[1]<<"\n";//muestra la carta 2 del jugador 
 					if (contadorTruco == false){
 						trucoMaquina = logicaTruco(cartaM,cartasMaquina); //llama al metodo donde la maquina puede o no cantar truco
-					} else if (trucoMaquina == true){ 
+					} 
+					if (trucoMaquina == true){ 
 						contadorTruco = true;
 						cout<<"TRUCO"; // muestra msj de TRUCO!! en la consola 
 						trucoQuerido = respuestaTrucoUsuario();//metodo para que el usuario responda si acepta o no
