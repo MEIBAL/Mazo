@@ -10,6 +10,8 @@ using namespace std;
 	
 int main(int argc, char *argv[]) { 
 	string nombre; 
+	const int LONG_NOMBRE = 45; //cantidad de caracteres que queremos que se puedan introducir.
+	char nombre_completo[LONG_NOMBRE]; 
 	string mazo[40] = {"1 espada","2 espada","3 espada","4 espada","5 espada","6 espada","7 espada","10 espada","11 espada","12 espada",
 		"1 oro","2 oro","3 oro","4 oro","5 oro","6 oro","7 oro","10 oro","11 oro","12 oro",
 		"1 basto","2 basto","3 basto","4 basto","5 basto","6 basto","7 basto","10 basto","11 basto","12 basto",
@@ -63,7 +65,7 @@ int main(int argc, char *argv[]) {
 	
 	
 	cout<<"Ingrese su nombre: ";
-	cin>>nombre; 
+	cin.getline( nombre_completo, LONG_NOMBRE );//lee un carácter que se introduce desde el teclado
 	do { //do while donde se cuenta el puntaje
 		system("CLS");
 		srand(time(NULL)); 
