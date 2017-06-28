@@ -72,8 +72,8 @@ int main(int argc, char *argv[]) {
 	//------------------------------------------------------------------------------BARAJAR
 		barajar(mazo, mazoBarajado); 
 	//------------------------------------------------------------------------------FIN BARAJAR
-		mostrar(mazo);
-		mostrar(mazoBarajado); 
+		//mostrar(mazo);
+		//mostrar(mazoBarajado); 
 	//------------------------------------------------------------------------------CORTAR
 		cout<<"\nIngrese la cantidad de cartas (entre 1 y 40) que va a tomar para cortar.\nSi ingresa '0'(cero), sera como golpear el mazo.\n";
 		cin>>corte;  
@@ -82,8 +82,8 @@ int main(int argc, char *argv[]) {
 		cout<<"\n\n"; //salto de linea
 		cout<<"Cartas Jugador\n";//ver cartas jugador 
 		mostrarCartas(cartasPersona);//llamado metodo mostrar
-		cout<<"Cartas Maquina\n";//ver cartas maquina 
-		mostrarCartas(cartasMaquina); //llamado metodo mostrar
+		//cout<<"Cartas Maquina\n";//ver cartas maquina 
+		//mostrarCartas(cartasMaquina); //llamado metodo mostrar
 	//------------------------------------------------------------------------------Rangos
 		rangoMaquina(cartaM, cartasMaquina, mazo); //se calculan los rangos de las cartas
 	//------------------------------------------------------------------------------Fin Rangos
