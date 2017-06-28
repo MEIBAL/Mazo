@@ -6,6 +6,7 @@ using namespace std;
 
 int juegaMaquina(int cartaJ,int cartaM[],string cartasMaquina[],int cartaMelegido); 
 bool aceptaTrucoMaquina(int cartaM[], string cartasMaquina[]);
+int LogicaEnvidoM(int PosMemoryM[], int ValorCartaM[], int EnviCPU);
 
 int juegaMaquina(int cartaJ,int cartaM[],string cartasMaquina[],int cartaMelegido){ 
 	int index; // toma el valor del random  
@@ -417,19 +418,23 @@ bool aceptaTrucoMaquina(int cartaM[], string cartasMaquina[]){
 		break;
 	case 4: 
 		cout << "INGRESE AL CASO 4";
+		cout<<"Me voy";
 		return false;
 		break;
 		
 	case 5: 
 		cout << "INGRESE AL CASO 5";
+		cout<<"Me voy";
 		return false;
 		break;
 	case 6: 
 		cout << "INGRESE AL CASO 6";
+		cout<<"Me voy";
 		return false;
 		break;
 	case 7: 
 		cout << "INGRESE AL CASO 7";
+		cout<<"Me voy";
 		return false;
 		break;
 	}	
