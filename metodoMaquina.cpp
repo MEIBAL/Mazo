@@ -434,3 +434,119 @@ bool aceptaTrucoMaquina(int cartaM[], string cartasMaquina[]){
 		break;
 	}	
 }
+int LogicaEnvidoM(int PosMemoryM[],int ValorCartaM[], int EnviCPU){
+	//Caso que 2 de las cartas tengan la misma pinta y la otra no
+	//Cuando decimos "...es igual a..." nos referimos a la pinta/palo de la carta
+	// Carta 1 es igual a Carta 2 y son distintas de Carta 3
+	if(PosMemoryM[0] == PosMemoryM[1] && PosMemoryM[0] != PosMemoryM[2] && PosMemoryM[1] != PosMemoryM[2]){
+		if(ValorCartaM[0] != 0 && ValorCartaM[1] != 0){
+			EnviCPU = ValorCartaM[0] + ValorCartaM[1] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[0] != 0 && ValorCartaM[1] == 0){
+			EnviCPU = ValorCartaM[0] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[0] == 0 && ValorCartaM[1] != 0){
+			EnviCPU = ValorCartaM[1] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[0] == 0 && ValorCartaM[1] == 0){
+			EnviCPU = 20;
+			return EnviCPU;
+		}
+	}
+	//Carta 1 es igual a Carta 3 y son distintas de Carta 2
+	if(PosMemoryM[0] == PosMemoryM[2] && PosMemoryM[0] != PosMemoryM[1] && PosMemoryM[2] != PosMemoryM[1]){
+		if(ValorCartaM[0] != 0 && ValorCartaM[2] != 0){
+			EnviCPU = ValorCartaM[0] + ValorCartaM[2] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[0] != 0 && ValorCartaM[2] == 0){
+			EnviCPU = ValorCartaM[0] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[0] == 0 && ValorCartaM[2] != 0){
+			EnviCPU = ValorCartaM[2] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[0] == 0 && ValorCartaM[2] == 0){
+			EnviCPU = 20;
+			return EnviCPU;
+		}
+	}
+	//Carta 2 es igual a Carta 3 y son distintas de Carta 1
+	if(PosMemoryM[1] == PosMemoryM[2] && PosMemoryM[1] != PosMemoryM[0] && PosMemoryM[2] != PosMemoryM[0]){
+		if(ValorCartaM[1] != 0 && ValorCartaM[2] != 0){
+			EnviCPU = ValorCartaM[1] + ValorCartaM[2] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[1] != 0 && ValorCartaM[2] == 0){
+			EnviCPU = ValorCartaM[1] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[1] == 0 && ValorCartaM[2] != 0){
+			EnviCPU = ValorCartaM[2] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[1] == 0 && ValorCartaM[2] == 0){
+			EnviCPU = 20;
+			return EnviCPU;
+		}
+	}
+	//Caso en el que las 3 cartas tengan la misma pinta
+	//Cuando decimos "carta igual a 0" nos referimos a que sean Sota(10) Caballo(11) o Rey(12)
+	//Si Carta 1, Carta 2 y Carta 3 son iguales
+	if(PosMemoryM[0] == PosMemoryM[1] && PosMemoryM[0] == PosMemoryM[2] && PosMemoryM[1] == PosMemoryM[2]){
+		//Contemplacion con 1 carta igual a 0	
+		if(ValorCartaM[0] != 0 && ValorCartaM[1] != 0 && ValorCartaM[2] == 0){
+			EnviCPU = ValorCartaM[0] + ValorCartaM[1] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[0] != 0 && ValorCartaM[1] == 0 && ValorCartaM[2] != 0){
+			EnviCPU = ValorCartaM[0] + ValorCartaM[2] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[0] == 0 && ValorCartaM[1] != 0 && ValorCartaM[2] != 0){
+			EnviCPU = ValorCartaM[1] + ValorCartaM[2] + 20;
+			return EnviCPU;
+		}
+		//Contempleacion con 2 cartas iguales a 0
+		if(ValorCartaM[0] != 0 && ValorCartaM[1] == 0 && ValorCartaM[2] == 0){
+			EnviCPU = ValorCartaM[0] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[0] == 0 && ValorCartaM[1] != 0 && ValorCartaM[2] == 0){
+			EnviCPU = ValorCartaM[1] + 20;
+			return EnviCPU;
+		}
+		if(ValorCartaM[0] == 0 && ValorCartaM[1] == 0 && ValorCartaM[2] != 0){
+			EnviCPU = ValorCartaM[2] + 20;
+			return EnviCPU;
+		}
+		//Contemplacion con 3 cartas iguales a 0
+		if(ValorCartaM[0] == 0 && ValorCartaM[1] == 0 && ValorCartaM[2] == 0){
+			EnviCPU = 20;
+			return EnviCPU;
+		}
+		//Cntemplacion con 3 cartas distintas de 0, se obviara la menor
+		if(ValorCartaM[0] != 0 && ValorCartaM[1] != 0 && ValorCartaM[2] != 0){
+			if(ValorCartaM[0] < ValorCartaM[1] && ValorCartaM[0] < ValorCartaM[2]){
+				EnviCPU = ValorCartaM[1] + ValorCartaM[2] + 20;
+				return EnviCPU;
+			}
+			if(ValorCartaM[1] < ValorCartaM[0] && ValorCartaM[1] < ValorCartaM[2]){
+				EnviCPU = ValorCartaM[0] + ValorCartaM[2] + 20;
+				return EnviCPU;
+			}
+			if(ValorCartaM[2] < ValorCartaM[1] && ValorCartaM[2] < ValorCartaM[0]){
+				EnviCPU = ValorCartaM[0] + ValorCartaM[1] + 20;
+				return EnviCPU;
+			}
+		}
+	}
+	//Caso en que ninguna de las cartas tenga la misma pinta
+	if(PosMemoryM[0] != PosMemoryM[1] && PosMemoryM[0] != PosMemoryM[2] && PosMemoryM[1] != PosMemoryM[2]){
+		return 0;
+	}
+}
