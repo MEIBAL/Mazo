@@ -21,6 +21,7 @@ int puntoRango(string carta, string mazo[]);
 string rangoMaquina(int cartaM[], string cartasMaquina[], string mazo[]); 
 bool logicaTruco(int cartaM[], string cartasMaquina[]);
 bool respuestaTrucoUsuario(); 
+bool CantaEnvido(int EnviCPU);
 
 string RangoJugadores(int ManoMaquina[], int ManoJugador[], string cartasMaquina[], string cartasPersona[], string mazo[]);
 string PuntoJugadores(int ValorCartaM[], int ValorCartaJ[], string cartasMaquina[], string cartasPersona[], string mazo[]);
@@ -458,7 +459,47 @@ bool logicaTruco(int cartaM[], string cartasMaquina[]){
 		} 
 	return 0;
 }
-
+/////////////////////////////////Sin terminar
+bool CantaEnvido(int EnviCPU){
+	srand(time(NULL)); 
+	int index = 0;
+	index = (rand() % 3);
+	
+	switch( index ){
+	case 0: 
+		if(EnviCPU > 25){
+			cout <<"INGRESE AL CASO 0"; 
+			return true;
+		}
+		else{
+			return false;
+		}
+		break; 
+	case 1: 
+		if(EnviCPU > 27){
+			cout <<"INGRESE AL CASO 1"; 
+			return true;
+		}
+		else{
+			return false;
+		} 
+		break;
+	case 2: 
+		if(EnviCPU > 30){
+			cout << "INGRESE AL CASO 2";
+			return true;
+		}
+		else{
+			return false;
+		} 
+		break; 
+	case 3: 
+			cout << "INGRESE AL CASO 3";
+			return true;
+		break;
+	}	
+}
+/////////////////////////////////////Sin terminar
 //metodo donde al usuario le muestran un menu donde puede decidir si quiere el truco o no
 bool respuestaTrucoUsuario(){
 	int a; 
