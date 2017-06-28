@@ -409,7 +409,7 @@ bool logicaTruco(int cartaM[], string cartasMaquina[]){
 	//metodo para que la maquina pueda decidir si cantar truco o no	
 	srand(time(NULL)); 
 	int index = 0;	
-//	index = (rand() % 5); 
+	index = (rand() % 5); 
 	switch(index){ 
 		case 0: 
 			if(cartaM[0] >= 9 && cartaM [1] >= 9 || cartaM[0] >= 9 && cartaM [2] >= 9 ||
